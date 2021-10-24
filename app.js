@@ -1,10 +1,12 @@
 let computerPlay = function(){
     let move = Math.floor((Math.random() * 3) + 1)
     if(move === 1){
-        return 'Rock'
+        return console.log('Rock')
     } else if (move === 2) {
-        return 'Paper'
+        return console.log('Paper')
     } else {
-        return 'Scissors'
+        return console.log('Scissors')
     }
 }
+
+computerPlay();
