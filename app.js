@@ -68,4 +68,3 @@ const game = function () {
         console.log(`pscore:${pScore} cscore:${cScore}`);
 }
 
-game();
