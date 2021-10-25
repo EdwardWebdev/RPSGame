@@ -1,3 +1,4 @@
+// random move generator
 const computerPlay = function () {
     let move = Math.floor((Math.random() * 3) + 1)
     if (move === 1) {
@@ -9,34 +10,43 @@ const computerPlay = function () {
     }
 }
 
-// const rockPaperScissors = function (playerSelection, computerSelection) {
-//     if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
-//         return 'You Lose!'
-//     } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
-//         return 'You win!'
-//     } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
-//         return 'You lose!'
-//     } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
-//         return 'You win!'
-//     } else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-//         return 'You lose!'
-//     } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-//         return 'You win!'
+const rockPaperScissors = function (playerSelection, computerSelection) {
+    console.log(playerSelection)
+    console.log(computerSelection)
+    let loss = 'You Lose!'
+    let win = 'You win!'
+    let draw = 'Draw!'
+    if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+        return loss
+    } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+        return win
+    } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+        return loss
+    } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+        return win
+    } else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+        return loss
+    } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+        return win
+    } else {
+        return draw
+    }
+}
+
+// const singleRound = function(playerSelection, computerSelection){
+//     console.log(playerSelection)
+//     console.log(computerSelection)
+//     if(playerSelection == 'ROCK' && computerSelection == 'PAPER'){
+//         console.log('You lose!');
+//     } else if(playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
+//         console.log('You win!');
 //     } else {
-//         return 'A draw!'
+//         console.log('Draw!');
 //     }
 // }
 
 const computerSelection = computerPlay();
-const input = prompt('Please choose rock, paper or scissors.')
+const input = prompt('Please choose rock, paper or scissors.');
 const playerSelection = input.toUpperCase();
 
-const game = function () {
-    rockPaperScissors();
-    rockPaperScissors();
-    rockPaperScissors();
-    rockPaperScissors();
-    rockPaperScissors();
-}
-
-game();
+rockPaperScissors(playerSelection, computerSelection);
