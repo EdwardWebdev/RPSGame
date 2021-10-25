@@ -14,10 +14,12 @@ const computerPlay = function () {
 const computerSelection = computerPlay();
 const input = prompt('Please choose rock, paper or scissors.');
 const playerSelection = input.toUpperCase();
+console.log(playerSelection);
+console.log(computerSelection);
+
+
 
 const playRound = function (playerSelection, computerSelection) {
-    console.log(playerSelection)
-    console.log(computerSelection)
     let loss = 'You Lose!'
     let win = 'You win!'
     let draw = 'Draw!'
@@ -52,19 +54,18 @@ const playRound = function (playerSelection, computerSelection) {
 
 
 const game = function () {
-    for (let i = 0; i < 5; i++) {
         let pScore = 0;
         let cScore = 0;
         let win = 'You win!';
         let loss = 'You lose!';
         let result = playRound(playerSelection, computerSelection)
+        console.log(result);
         if (result === win) {
             pScore += 1;
         } else if (result === loss) {
             cScore += 1;
         }
         console.log(`pscore:${pScore} cscore:${cScore}`);
-    }
 }
 
 game();
