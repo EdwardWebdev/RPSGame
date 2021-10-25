@@ -10,15 +10,6 @@ const computerPlay = function () {
     }
 }
 
-
-const computerSelection = computerPlay();
-const input = prompt('Please choose rock, paper or scissors.');
-const playerSelection = input.toUpperCase();
-console.log(playerSelection);
-console.log(computerSelection);
-
-
-
 const playRound = function (playerSelection, computerSelection) {
     let loss = 'You Lose!'
     let win = 'You win!'
@@ -40,31 +31,16 @@ const playRound = function (playerSelection, computerSelection) {
     }
 }
 
-// const singleRound = function(playerSelection, computerSelection){
-//     console.log(playerSelection)
-//     console.log(computerSelection)
-//     if(playerSelection == 'ROCK' && computerSelection == 'PAPER'){
-//         console.log('You lose!');
-//     } else if(playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
-//         console.log('You win!');
-//     } else {
-//         console.log('Draw!');
-//     }
-// }
-
-
 const game = function () {
-        let pScore = 0;
-        let cScore = 0;
-        let win = 'You win!';
-        let loss = 'You lose!';
-        let result = playRound(playerSelection, computerSelection)
-        console.log(result);
-        if (result === win) {
-            pScore += 1;
-        } else if (result === loss) {
-            cScore += 1;
-        }
-        console.log(`pscore:${pScore} cscore:${cScore}`);
+    let computerSelection = computerPlay();
+    let input = prompt('Please choose rock, paper or scissors.');
+    let playerSelection = input.toUpperCase();
+    console.log(playerSelection);
+    console.log(computerSelection);
+    let result = playRound(playerSelection, computerSelection)
+    return result;
 }
 
+for(let i = 0; i <5; i++){
+    game();
+}
