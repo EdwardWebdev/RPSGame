@@ -1,3 +1,5 @@
+
+
 //Random move generator
 const computerPlay = function () {
     let move = Math.floor((Math.random() * 3) + 1)
@@ -56,6 +58,11 @@ const game = function () {
 }
 
 //For loop to run the game 5 times
-for(let i = 0; i <5; i++){
-    keepScore(game());
-}
+
+
+let rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', (e) => console.log('Rock!'));
+let paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', (e) => console.log('Paper!'));
+let scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', (e) => console.log('Scissors!'));
