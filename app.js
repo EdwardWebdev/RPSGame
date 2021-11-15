@@ -47,9 +47,9 @@ const keepScore = function (game) {
 }
 
 // Function that asks the player for input and gets the computer's input
-const game = function () {
+const game = function (selection) {
     let computerSelection = computerPlay();
-    let input = prompt('Please choose rock, paper or scissors.');
+    let input = selection;
     let playerSelection = input.toUpperCase();
     console.log(playerSelection);
     console.log(computerSelection);
@@ -57,12 +57,18 @@ const game = function () {
     return result;
 }
 
-//For loop to run the game 5 times
 
+const rockButton = document.querySelector('#rock');
+const playRock = rockButton.addEventListener('click', (e) => {
+    keepScore(game('rock'));
+});
 
-let rockButton = document.querySelector('#rock');
-rockButton.addEventListener('click', (e) => console.log('Rock!'));
-let paperButton = document.querySelector('#paper');
-paperButton.addEventListener('click', (e) => console.log('Paper!'));
-let scissorsButton = document.querySelector('#scissors');
-scissorsButton.addEventListener('click', (e) => console.log('Scissors!'));
+const paperButton = document.querySelector('#paper');
+const playPaper = paperButton.addEventListener('click', (e) => {
+    keepScore(game('paper'));
+});
+
+const scissorsButton = document.querySelector('#scissors');
+const playScissors = scissorsButton.addEventListener('click', (e) => {
+    keepScore(game('scissors'));
+});
