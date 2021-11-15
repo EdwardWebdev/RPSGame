@@ -41,9 +41,20 @@ const keepScore = function (game) {
     if(game === 1){
         pScore = pScore + 1;
     } else if (game === 2){
-        cScore= cScore + 1;
+        cScore = cScore + 1;
     }
-    console.log(`Player:${pScore} Computer:${cScore}`);
+    const resultDiv = document.querySelector('#results');
+    const score = document.createElement('p');
+    score.textContent = `Player: ${pScore} Computer: ${cScore}`;
+    resultDiv.appendChild(score);
+    function checkScore() {
+        if(pScore === 5 || cScore === 5){
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => button.remove());
+            score.textContent = `Player: ${pScore} Computer: ${cScore}. We have a winner!`
+        }
+    }
+    checkScore();
 }
 
 // Function that asks the player for input and gets the computer's input
@@ -51,11 +62,10 @@ const game = function (selection) {
     let computerSelection = computerPlay();
     let input = selection;
     let playerSelection = input.toUpperCase();
-    console.log(playerSelection);
-    console.log(computerSelection);
     let result = playRound(playerSelection, computerSelection);
     return result;
 }
+
 
 
 const rockButton = document.querySelector('#rock');
